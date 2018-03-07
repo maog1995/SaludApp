@@ -36,6 +36,8 @@ twig:
     form_themes: ['bootstrap_4_horizontal_layout.html.twig']
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    globals:
+            name_app: SaludApp
 
 # Doctrine Configuration
 doctrine:
