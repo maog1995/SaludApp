@@ -9,6 +9,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Product
@@ -42,8 +43,10 @@ class Product
     private $netWeight;
 
     /**
-     *@var integer
+     * @var integer
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\GreaterThanOrEqual(0)
+     * @Assert\LessThanOrEqual(5)
      */
     private $score;
 
