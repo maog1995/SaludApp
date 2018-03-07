@@ -1,4 +1,4 @@
-.checkout
+SaludApp
 =========
 
-A Symfony project created on March 6, 2018, 11:05 pm.
+Aplicación web symfony para llevar un control sobre los productos alimenticios y su calidad.
