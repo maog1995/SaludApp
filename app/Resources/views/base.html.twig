@@ -1,33 +1,55 @@
 <!doctype html>
 <html>
 <head>
-    <!-- Required meta tags -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+          content="Página web principal de la aplicación {{ name_app }}, aplicacion que te ayudará a elegir los productos mas sanos del mercado">
+    <meta name="author" content="Miguel Ángel Ortiz">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="{{ asset('assets/magnific-popup/magnific-popup.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('assets/css/creative.min.css') }}" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
 
     {% block stylesheets %}
     {% endblock %}
 
     {% block scripts %}
     {% endblock %}
+
     <title>{% block title %}{% endblock %}</title>
 </head>
-<body>
+<body id="page-top">
 {% block body %}
 {% endblock %}
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="{{ asset('assets/jquery/jquery.slim.min.js') }}"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"
-        crossorigin="anonymous"></script>
+
+<!-- Bootstrap core JavaScript -->
+<script src="{{ asset('assets/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+<!-- Plugin JavaScript -->
+<script src="{{ asset('assets/jquery-easing/jquery.easing.min.js') }}"></script>
+<script src="{{ asset('assets/scrollreveal/scrollreveal.min.js') }}"></script>
+<script src="{{ asset('assets/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+
+<!-- Custom scripts for this template -->
+<script src="{{ asset('assets/js/creative.min.js') }}"></script>
+
 </body>
 </html>
