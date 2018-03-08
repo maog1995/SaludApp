@@ -28,8 +28,13 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item btn-group" role="group">
-                        <button type="button" class="btn btn-secondary">Iniciar sesión</button>
-                        <button type="button" class="btn btn-warning text-white">Registrarse</button>
+                        {% if app.user == false %}
+                            <a class="btn btn-secondary" href="{{ path('login') }}">Iniciar sesión
+                            </a>
+                            <a class="btn btn-warning text-white disabled">Registrarse</a>
+                        {% else %}
+                            <a class="btn btn-danger text-white" href="{{ path('logout') }}">Cerrar sesión</a>
+                        {% endif %}
                     </li>
                 </ul>
             </div>

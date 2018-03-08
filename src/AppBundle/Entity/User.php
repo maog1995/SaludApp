@@ -47,7 +47,7 @@ class User implements UserInterface
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=25, nullable=false)
+     * @ORM\Column(type="string", length=255, nullable=false)
      * @Assert\Regex(
      *     pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,25}$",
      *     message="Minimum eight characters, at least one letter and one number"

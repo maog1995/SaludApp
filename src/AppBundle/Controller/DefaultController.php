@@ -23,4 +23,25 @@ class DefaultController extends Controller
     {
         return $this->render('default/general.html.twig');
     }
+
+    /**
+     * @Route("/login", name="login")
+     */
+    public function loginAction(Request $request)
+    {
+        $helper = $this->get('security.authentication_utils');
+
+        return $this->render('default/login.html.twig', [
+            'error' => $helper->getLastAuthenticationError(),
+            ''
+        ]);
+    }
+
+    /**
+     * @Route("/check", name="check")
+     * @Route("/logout", name="logout")
+     */
+    public function checkAction()
+    {
+    }
 }
