@@ -18,14 +18,16 @@ use Symfony\Component\Validator\Constraints as Assert;
 class ProductIngredient
 {
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Product", inversedBy="ingredients")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Product", inversedBy="ingredients")
      * @ORM\JoinColumn(nullable=true)
+     * @ORM\Id()
      */
     private $idProduct;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Ingredient", inversedBy="products")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Ingredient", inversedBy="products")
      * @ORM\JoinColumn(nullable=true)
+     * @ORM\Id()
      */
     private $idIngredient;
 
@@ -90,6 +92,6 @@ class ProductIngredient
         $this->percentage = $percentage;
         return $this;
     }
-    
 
+    
 }
