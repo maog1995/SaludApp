@@ -51,6 +51,11 @@ class Product
     private $score;
 
     /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ProductIngredient", mappedBy="idProduct")
+     */
+    private $ingredients;
+
+    /**
      * @return string
      */
     public function getId()
@@ -137,6 +142,24 @@ class Product
     public function setScore($score)
     {
         $this->score = $score;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIngredients()
+    {
+        return $this->ingredients;
+    }
+
+    /**
+     * @param mixed $ingredients
+     * @return Product
+     */
+    public function setIngredients($ingredients)
+    {
+        $this->ingredients = $ingredients;
         return $this;
     }
 

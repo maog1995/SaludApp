@@ -40,6 +40,11 @@ class Ingredient
     private $quality;
 
     /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ProductIngredient", mappedBy="idIngredient")
+     */
+    private $products;
+
+    /**
      * @return int
      */
     public function getId()
@@ -90,6 +95,24 @@ class Ingredient
     public function setQuality($quality)
     {
         $this->quality = $quality;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProducts()
+    {
+        return $this->products;
+    }
+
+    /**
+     * @param mixed $products
+     * @return Ingredient
+     */
+    public function setProducts($products)
+    {
+        $this->products = $products;
         return $this;
     }
 
