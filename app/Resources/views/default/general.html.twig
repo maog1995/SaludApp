@@ -4,16 +4,19 @@
 
 {% block scripts %}
     <script>
+        var searchResult;
         window.onload = function () {
-            document.getElementById('btnSearch').onclick = function () {
-                var contents = document.getElementById('result').getElementsByClassName('container');
-                contents[0].style.display = 'none';
-                contents[1].style.display = 'inherit';
-                contents[2].style.display = 'inherit';
-            };
+            document.getElementById('btnSearch').onclick = search;
+        };
+
+        function search() {
+            var contents = document.getElementById('result').getElementsByClassName('container');
+            contents[0].style.display = 'none';
+            contents[1].style.display = 'inherit';
+            contents[1].getElementsByTagName('h2')[0].innerHTML = searchResult.name;
+            contents[2].style.display = 'inherit';
         }
-    </script>
-    <script>
+
         var options = {
 
             url: "{{ path('get_all') }}",
@@ -57,7 +60,9 @@
                     }
                 },
                 onChooseEvent: function () {
-                    alert("Click !");
+                    searchResult = $('#search').getSelectedItemData();
+                    // alert($("#search").getSelectedItemData());
+                    $('#btnSearch').click();
                 }
             },
 
