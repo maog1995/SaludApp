@@ -27,7 +27,7 @@ class Ingredient
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=25, nullable=false)
+     * @ORM\Column(type="string", length=25, nullable=false, unique=true)
      */
     private $name;
 
