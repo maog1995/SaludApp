@@ -26,10 +26,14 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
 
-    {% block stylesheets %}
-    {% endblock %}
+    {#EasyAutocomplete#}
+    <!-- CSS file -->
+    <link rel="stylesheet" href="{{ asset('assets/EasyAutocomplete/easy-autocomplete.min.css') }}">
 
-    {% block scripts %}
+    <!-- Additional CSS Themes file - not required-->
+    <link rel="stylesheet" href="{{ asset('assets/EasyAutocomplete/easy-autocomplete.themes.min.css') }}">
+
+    {% block stylesheets %}
     {% endblock %}
 
     <title>{% block title %}{% endblock %}</title>
@@ -50,6 +54,13 @@
 
 <!-- Custom scripts for this template -->
 <script src="{{ asset('assets/js/creative.min.js') }}"></script>
+
+{#EasyAutocomplete#}
+<!-- JS file -->
+<script src="{{ asset('assets/EasyAutocomplete/jquery.easy-autocomplete.min.js') }}"></script>
+
+{% block scripts %}
+{% endblock %}
 
 </body>
 </html>

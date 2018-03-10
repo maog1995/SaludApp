@@ -13,6 +13,59 @@
             };
         }
     </script>
+    <script>
+        var options = {
+
+            url: "{{ path('get_all') }}",
+
+            categories: [{
+                listLocation: "ingredients",
+                maxNumberOfElements: 4,
+                header: "Ingredientes"
+            }],
+
+            getValue: function (element) {
+                return element.name;
+            },
+
+            template: {
+                type: "description",
+                fields: {
+                    description: "quality"
+                }
+            },
+
+            list: {
+                maxNumberOfElements: 8,
+                match: {
+                    enabled: true
+                },
+                sort: {
+                    enabled: true
+                },
+                showAnimation: {
+                    type: "fade", //normal|slide|fade
+                    time: 400,
+                    callback: function () {
+                    }
+                },
+
+                hideAnimation: {
+                    type: "slide", //normal|slide|fade
+                    time: 400,
+                    callback: function () {
+                    }
+                },
+                onChooseEvent: function () {
+                    alert("Click !");
+                }
+            },
+
+            theme: "dark"
+        };
+
+        $("#search").easyAutocomplete(options);
+    </script>
 {% endblock %}
 
 {% block body %}
@@ -64,7 +117,7 @@
                 <p class="lead">Introduce el nombre o la marca del producto</p>
                 <hr class="my-4">
 
-                <input class="form-control" type="text" placeholder="Buscar" aria-label="Buscar">
+                <input id="search" class="form-control" type="text" placeholder="Buscar" aria-label="Buscar">
 
                 <hr class="my-4">
 
